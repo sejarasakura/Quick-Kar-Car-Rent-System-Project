@@ -1,0 +1,22 @@
+SMAP
+driver_005factivity_jsp.java
+JSP
+*S JSP
+*F
++ 0 driver_activity.jsp
+_page/client_page/driver/recent_activity/driver_activity.jsp
+*L
+5,63:53
+67,2:116
+69,11:119
+79,4:130
+83:134,3
+84,2:137
+86:139,5
+87:144,3
+88:147
+89:148,3
+90,4:151
+93,4:155
+96,7:159
+*E

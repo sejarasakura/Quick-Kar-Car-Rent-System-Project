@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <admin-list>
+        <admin>
+            <admin_id>nbuser</admin_id>
+            <password>nbuser</password>
+        </admin>
+        <admin>
+            <admin_id>admin</admin_id>
+            <password>adminpass</password>
+        </admin>
+        <admin>
+            <admin_id>sejarasakura</admin_id>
+            <password>Aa73218324</password>
+        </admin>
+    </admin-list>
+</xml>

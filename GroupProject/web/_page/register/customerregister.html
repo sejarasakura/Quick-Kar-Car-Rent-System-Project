@@ -1,0 +1,148 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://localhost:8080/GroupProject/_jquery/jquery.min.js"></script>
+    <script src="http://localhost:8080/GroupProject/_jquery/jquery.validate.js"></script>
+    <script src="http://localhost:8080/GroupProject/_jquery/jquery.validate.min.js"></script>
+    <script src="http://localhost:8080/GroupProject/_js/Validatation_c.js"></script>
+
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+
+                        <h2>Register now!</h2>
+                        <p>Customer</p>
+						<p>Join Us</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="createform" action="customer_done.jsp">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="ic_number" class="required">IC number</label>
+                                    <input type="text" name="ic_number" id="ic_number" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_num" class="required">Phone number</label>
+                                    <input type="text" name="phone_num" id="phone_num" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+
+                                <div class="form-input">
+                                    <label for="chequeno">E-Wallet ID（Recommended） / Credit/ Debit Card No.</label>
+                                    <input type="text" name="card_num" id="card_num" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno">E-Wallet ID（Recommended） / Credit/ Debit Card No.</label>
+                                    <input type="text" name="payment_method" id="payment_method" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="member_level">Member level</label>
+                                    <input type="text" name="member_level" id="member_level" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno">Password</label>
+                                    <input type="text" name="password" id="password" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+	<script src="js/profile.js"></script>
+            <script>
+            $(document).ready(function () {
+                $("#createform").validate({
+                    rules: {
+                        first_name: {
+                            required: true,
+                            regex: regex_list.Validate.name
+                        },
+                        last_name: {
+                            required: true,
+                            regex: regex_list.Validate.name
+                        },
+                        phone_num: {
+                            required: true,
+                            regex: regex_list.Validate.phone_num
+                        },
+                        ic_num: {
+                            required: true,
+                            regex: regex_list.Validate.ic_num
+                        },
+                        card_num: {
+                            regex: regex_list.Validate.card_num
+                        },
+                        password: {
+                            required: true,
+                            minlength: 8,
+                            regex: regex_list.Validate.password
+                        },
+                        confirm_password: {
+                            required: true,
+                            minlength: 8,
+                            equalTo: "#password",
+                            regex: regex_list.Validate.password
+                        },
+                        payment_method: {
+                            required: true,
+                            regex: regex_list.Validate.enum
+                        }
+                    },
+                    message:{
+                        confirm_password: {
+                            equalTo: "The password enter is not match, please tray agian"
+                        }
+                    },
+                    errorPlacement: function(label, element) {
+                        label.addClass('text-danger');
+                        label.insertAfter(element);
+                    },
+                    wrapper: 'span'
+                });
+            });
+            </script>
+</body>
+</html>

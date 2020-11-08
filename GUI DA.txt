@@ -1,0 +1,368 @@
+CREATE TABLE Rating (
+    rating_id varchar(9),
+    rating_star varchar(2),
+    cust_comments varchar(100),
+    rating_datetime timestamp,
+    PRIMARY KEY (rating_id) 
+);
+
+
+CREATE TABLE Location (
+    location_code varchar(10),
+    point varchar(16),
+    location_name varchar(40),
+    Address varchar(255),
+    PRIMARY KEY (location_id)
+);
+
+
+
+CREATE TABLE CarType (
+    car_type_id varchar(8),
+    car_series_name varchar(20),
+    cust_capacity number(2),
+    PRIMARY KEY(car_type_id) 
+);
+
+CREATE TABLE Customer (
+    cust_id varchar(10),
+    first_name varchar(20),
+    last_name varchar(20),
+    phone_num varchar(13),
+    ic_num varchar(14),
+    point_amount number(6),
+    membership_level varchar(2),
+    proc_pic blob(2M),
+    PRIMARY KEY (cust_id)
+);
+
+CREATE TABLE Driver (
+    driver_id varchar(8),
+    first_name varchar(20),
+    last_name varchar(20),
+    phone_num varchar(13),
+    ic_num varchar(14),
+    license varchar(8),
+    year_of_drive number(2),
+    proc_pic blob(2M),
+    PRIMARY KEY (driver_id)
+);
+
+CREATE TABLE Payment_method (
+    pay_method_id varchar(14),
+    user_id varchar(10) NOT NULL,
+    payment_method varchar(2),
+    card_num varchar (20),
+    pay_amount number (10,2),
+    PRIMARY KEY(pay_method_id) 
+);
+
+CREATE TABLE Payment (
+    payment_id varchar(18),
+    payment_method varchar(14),
+    payment_status varchar(1),
+    payment_date timestamp,
+    PRIMARY KEY(payment_id),
+    FOREIGN KEY(payment_method) REFERENCES Payment_method(pay_method_id)
+);
+
+CREATE TABLE Car (
+    car_plate_num varchar(8),
+    car_type_id varchar(8),
+    owner_name varchar(20),
+    quickar_type varchar(1),
+    driver_id varchar(8),
+    PRIMARY KEY(car_plate_num),
+    FOREIGN KEY(car_type_id) REFERENCES CarType(car_type_id),
+    FOREIGN KEY(driver_id) REFERENCES Driver(car_type_id)
+);
+
+CREATE TABLE Booking (
+    booking_id varchar(18),
+    rating_id varchar(9),
+    cust_id varchar(10),
+    driver_id varchar(8),
+    payment_id varchar(18),
+    booking_date timestamp,
+    fetch_date timestamp,
+    booking_status varchar(1),
+    start_location_code varchar(10),
+    end_location_code varchar(10),
+    PRIMARY KEY(booking_id),
+    FOREIGN KEY(rating_id) REFERENCES Rating(rating_id)
+    FOREIGN KEY(cust_id) REFERENCES Customer(cust_id)
+    FOREIGN KEY(driver_id) REFERENCES Driver(driver_id)
+    FOREIGN KEY(payment_id) REFERENCES Payment(payment_id)
+    FOREIGN KEY(start_location_code) REFERENCES Location(location_code)
+    FOREIGN KEY(end_location_code) REFERENCES Location(location_code)
+);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000119','S4',?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000219','S3',?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000319','S7',?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000419',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000519',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000619',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000719',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000819',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00000919',?,?,?);
+
+INSERT INTO Rating(rating_id, rating_star, cust_comments, rating_datetime)
+VALUES ('R00001019',?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO Location(location_code, point, location_name)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO CarType(car_type_id, car_series_name, cust_capacity)
+VALUES (?,?,?);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('BR001141219','Eric','Ong','6012-132-4568','210425-54-4521', 1000,'BR',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('SL002141219','Cindy','Lim','6015-668-9879','900130-23-6523',1000,'SL',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('AU003141219','Joey','Lee','6014-887-5099','801223-66-9865',1000,'AU',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('PL004141219','Johnny','Wong','6019-668-8899','851104-54-1457',1000,'PL',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('AU005141219','Tim','Chao','6017-150-6679','951112-44-2456',1000,'AU',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('SL006141219','Robert','How','6016-558-2356','850222-33-9007',1000,'SL',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('PL007141219','Tristan','Seow','6012-933-9589','681116-09-1657',1000,'PL',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('BR008141219','Ronald','Heng','6011-911-1862','780731-20-2538',1000,'BR',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('AU009141219','Frankie','Yong','6010-720-3079','000814-22-3702',1000,'AU',NULL);
+
+INSERT INTO Customer(Cust_id, first_name, last_name, phone_num, ic_num, point_amount, membership_level, proc_pic)
+VALUES ('BR010141219','Jocelyn','Ma','6013-488-9879', '680327-09-9166',1000,'BR',NULL);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment_method(pay_method_id, user_id, payment_method, card_num, pay_amount)
+VALUES (?,?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Payment(payment_id, payment_method, payment_status, payment_date)
+VALUES(?,?,?,?);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D2000001','Ben','Philips','018-367-6754','','65738925',20,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D1600002','Mike','Leong','016-688-7809',?,?,16,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D3500003','Romeo','Parker','013-335-9845',?,?,35,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D1400004','Nelson','Ng','012-276-4544',?,?,14,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D1100005','Lino','Tino','011-328-0967',?,?,11,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D2300006','Leito','Belle','011-365-9887',?,?,23,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D2800007','Thomas','Yip','019-979-5667',?,?,28,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D3200008','Damian','Thomaso','',?,?,32,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D3700009','David','Dave',?,?,?,37,NULL);
+
+INSERT INTO Driver(driver_id, first_name, last_name, phone_num, ic_num, license, year_of_drive, proc_pic)
+VALUES('D0800010','Alexinho','Thoi',?,?,?,08,NULL);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Car(car_plate_num, car_type_id, owner_name, quickar_type, driver_id)
+VALUES(?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);
+
+INSERT INTO Booking(booking_id, rating_id, cust_id, driver_id, payment_id, booking_date, fetch_date, booking_status, start_location_code, end_location_code)
+VALUES(?,?,?,?,?,?,?,?,?,?);

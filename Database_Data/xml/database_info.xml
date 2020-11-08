@@ -1,0 +1,9 @@
+<!--Do not modify the information in this file-->
+<!--System real time detect information in this file-->
+<database>
+	<host>jdbc:derby://localhost:1527/</host>
+	<username>QuicKarAdmin</username>
+	<password>quickarPass</password>
+	<databaseName>QuicKarDB</databaseName>
+	<jdbcDrive>org.apache.derby.jdbc.ClientDriver</jdbcDrive>
+</database>

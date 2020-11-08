@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuicKar - Admin console</title>
+        <link rel="icon" href="http://localhost:8080/GroupProject/_resource/icon/top_full_icon.png">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.css">
+        <script src="http://localhost:8080/GroupProject/_jquery/jquery.min.js"></script>
+        <script src="http://localhost:8080/GroupProject/_bootstrap/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            jQuery(document).ready(
+                function(){
+                    $("#header").load("http://localhost:8080/GroupProject/_sub_page/header.jsp");
+                    $("#footer").load("http://localhost:8080/GroupProject/_sub_page/footer.html");
+                }
+            );
+        </script>
+        <style>
+            .modules{
+                min-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="jumbotron text-center">
+            <div id="_maintance" class="modules-s">
+                <h2>QuicKar backup and recovery</h2>
+                <p>QuicKar - Admin console backup current database data to file ?</p>
+            </div>
+        </div>
+        <div class="container">
+            <form method="post" action="/GroupProject/backup_database">
+                <div class="form-group row">
+                    <div class="col-sm-6">Please write the file name : </div>
+                    <div class="col-sm-6"><input type="text" class="form-control" id="filename" placeholder="Please enter a folder name caracter only" name="filename"></div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6">
+                        <input type="submit" class="btn btn-info pull-right" style="margin: 10px" value="Back Up Now">
+                        <a href="http://localhost:8080/GroupProject/_page/admin_console/index.html" class="btn btn-danger pull-right" style="margin: 10px">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="footer"></div>
+    </body>
+</html>

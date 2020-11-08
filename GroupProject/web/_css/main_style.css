@@ -1,0 +1,16 @@
+body, html {
+    background: linear-gradient( #DDDC44 0%, #ddab00 100%);
+    height: auto;
+    background-repeat: no-repeat;
+}
+.form-group input, .form-group select, .form-group select option, div.payment{
+    background-color: #fcf4A3;
+    color: #222;
+}
+.form-group input[disabled], .form-group input[readonly] .form-group-readonly-skdf{
+    background-color: #F8E473;
+    color: #222;
+}
+.jumbotron{
+    background-color: #daa520!important;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<database>
+		<host>jdbc:derby://localhost:1527/</host>
+		<username>QuicKarAdmin</username>
+		<password>quickarPass</password>
+		<databaseName>QuicKar</databaseName>
+		<jdbcDrive>org.apache.derby.jdbc.ClientDriver</jdbcDrive>
+	</database>
+	<server>
+		<username>QuicKarAdmin</username>
+		<password>123456</password>
+		<connect-url>http://localhost:8080/GroupProject/</connect-url>
+	</server>
+</xml>

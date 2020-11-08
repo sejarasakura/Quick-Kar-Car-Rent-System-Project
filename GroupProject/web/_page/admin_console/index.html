@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuicKar - Admin console</title>
+        <link rel="icon" href="http://localhost:8080/GroupProject/_resource/icon/top_full_icon.png">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.css">
+        <script src="http://localhost:8080/GroupProject/_jquery/jquery.min.js"></script>
+        <script src="http://localhost:8080/GroupProject/_bootstrap/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            jQuery(document).ready(
+                function(){
+                    $("#header").load("http://localhost:8080/GroupProject/_sub_page/header.jsp");
+                    $("#footer").load("http://localhost:8080/GroupProject/_sub_page/footer.html");
+                }
+            );
+            function clearModule(id_need_show){    
+                $('.modules').hide(); // hides
+                $('.modules-s').hide(); // hides
+                $('#' + id_need_show).show(); // hides
+                $('#_' + id_need_show).show(); // hides
+            }
+            function toNone(){
+                clearModule('none-module');
+            }
+            function toBooking(){
+                clearModule('booking');
+            }
+            function toDriver(){
+                clearModule('driver');
+            }
+            function toCustomer(){
+                clearModule('customer');
+            }
+            function toReport(){
+                clearModule('report');
+            }
+            function toMaintance(){
+                clearModule('maintance');
+            }
+        </script>
+        <style>
+            .modules{
+                min-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="jumbotron text-center">
+            <div id="_none-module" class="modules-s">
+                <h1>QuicKar - Admin console</h1>
+            </div>
+            <div id="_booking" class="modules-s">
+                <h1>QuicKar booking manager</h1>
+                <p>QuicKar - Admin console</p>
+            </div>
+            <div id="_customer" class="modules-s">
+                <h1>QuicKar customer manager</h1>
+                <p>QuicKar - Admin console</p>
+            </div>
+            <div id="_driver" class="modules-s">
+                <h1>QuicKar driver manager</h1>
+                <p>QuicKar - Admin console</p>
+            </div>
+            <div id="_report" class="modules-s">
+                <h1>QuicKar report checking</h1>
+                <p>QuicKar - Admin console</p>
+            </div>
+            <div id="_maintance" class="modules-s">
+                <h1>QuicKar backup-recovery</h1>
+                <p>QuicKar - Admin console</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="list-group">
+                        <a href="#" onclick="toBooking();" class="list-group-item">Booking manager</a>
+                        <a href="#" onclick="toCustomer();" class="list-group-item">Customer manager</a>
+                        <a href="#" onclick="toDriver();" class="list-group-item">Driver manager</a>
+                        <a href="#" onclick="toReport();" class="list-group-item">Report</a>
+                        <a href="#" onclick="toMaintance();" class="list-group-item">Maintenance</a>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="card bg-secondary text-white">
+                        <div class="well well-lg">
+                            <h1>
+                                Welcome to <b>QuicKar</b> admin console side
+                            </h1>
+                            <br>
+                            <div id="none-module" class="modules">
+                                <h2 class="text-secondary">Select a modules to start</h2>
+                                <h4>
+                                    <ul>
+                                        <li>QuicKar shares its vision to be Malaysian consumer’s everyday app</li>
+                                        <br>
+                                        <li>Vision fulfills Malaysian and Southeast Asian consumers’ wishlist for an everyday app where users will be able to commute, eat, deliver packages, and pay for daily essentials through one QuicKar app in the near future</li>
+                                        <br>
+                                        <li>Immediate plans include introducing QuicKarFood and expanding QuicKarPay services to serve the daily essential needs of Malaysians beyond ride-hailing</li>
+                                        <br>
+                                    </ul>
+                                </h4>
+                            </div>
+                            <div id="booking" class="modules">
+                                <div class="list-group">
+                                    <a href="booking/view/view_booking.jsp" class="list-group-item list-group-item-action list-group-item-info">View all booking</a>
+                                    <a href="booking/create/add_new_booking.jsp" class="list-group-item list-group-item-action list-group-item-info">Add new booking</a>
+                                    <a href="booking/update/update_booking.jsp" class="list-group-item list-group-item-action list-group-item-info">Update booking</a>
+                                    <a href="booking/cancel/cancel_booking.jsp" class="list-group-item list-group-item-action list-group-item-info">Cancel booking</a>
+                                    <a href="booking/delete/delete_booking.jsp" class="list-group-item list-group-item-action list-group-item-info">Delete booking</a>
+                                </div>
+                            </div>
+                            <div id="customer" class="modules">
+                                <div class="list-group">
+                                    <a href="customer/create/admin_add_customer.html" class="list-group-item list-group-item-action list-group-item-info">Add new customer</a>
+                                    <a href="customer/delete/delete_customer.jsp" class="list-group-item list-group-item-action list-group-item-info">Delete customer</a>
+                                    <a href="customer/update/update_customer.jsp" class="list-group-item list-group-item-action list-group-item-info">Update customer</a>
+                                    <a href="customer/view/view_customer.jsp" class="list-group-item list-group-item-action list-group-item-info">View all customer</a>
+                                </div>
+                            </div>
+                            <div id="driver" class="modules">
+                                <div class="list-group">
+                                    <a href="driver/view/view_driver.jsp" class="list-group-item list-group-item-action list-group-item-info">View all driver</a>
+                                    <a href="driver/create/admin_add_driver.html" class="list-group-item list-group-item-action list-group-item-info">Add new driver</a>
+                                    <a href="driver/update/update_driver.jsp" class="list-group-item list-group-item-action list-group-item-info">Update driver</a>
+                                    <a href="driver/delete/delete_driver.jsp" class="list-group-item list-group-item-action list-group-item-info">Delete driver</a>
+                                    <a href="driver/approve/approve_driver.jsp" class="list-group-item list-group-item-action list-group-item-info">Approve driver</a>
+                                </div>
+                            </div>
+                            <div id="report" class="modules">
+                                <div class="list-group">
+                                    <a href="http://localhost:8080/GroupProject/_page/admin_console/report/index.jsp?report_type=booking" class="list-group-item list-group-item-action list-group-item-info">QuicKar booking details report</a>
+                                    <a href="http://localhost:8080/GroupProject/_page/admin_console/report/index.jsp?report_type=customer" class="list-group-item list-group-item-action list-group-item-info">Customer monthly payment report</a>
+                                    <a href="http://localhost:8080/GroupProject/_page/admin_console/report/index.jsp?report_type=driver" class="list-group-item list-group-item-action list-group-item-info">QuicKar driver summary report</a>
+                                </div>
+                            </div>
+                            <div id="maintance" class="modules">
+                                <div class="list-group">
+                                    <a href="maintance/back_up/back_up.html" class="list-group-item list-group-item-action list-group-item-info">Back Up Data</a>
+                                    <a href="maintance/retrive_backup/retrive_backup.jsp" class="list-group-item list-group-item-action list-group-item-info">Restore Data</a>
+                                    <a href="maintance/contact/contact.jsp" class="list-group-item list-group-item-action list-group-item-info">User Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+        <script>toNone();</script>
+    </body>
+</html>

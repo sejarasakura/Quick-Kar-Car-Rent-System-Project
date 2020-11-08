@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Back up complete</title>
+        <link rel="icon" href="http://localhost:8080/GroupProject/_resource/icon/top_full_icon.png">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://localhost:8080/GroupProject/_bootstrap/css/bootstrap.css">
+        <script src="http://localhost:8080/GroupProject/_jquery/jquery.min.js"></script>
+        <script src="http://localhost:8080/GroupProject/_bootstrap/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            jQuery(document).ready(
+                function(){
+                    $("#header").load("http://localhost:8080/GroupProject/_sub_page/header.jsp");
+                    $("#footer").load("http://localhost:8080/GroupProject/_sub_page/footer.html");
+                }
+            );
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div class="jumbotron text-center">
+            <div id="_maintance" class="modules-s">
+                <h1>Recovering all the data in the database</h1>
+            </div>
+        </div>
+        <div class="container text-center">            
+            <h2 id="demo"></h2>
+        </div>
+        
+        <div id="footer"></div>
+    </body>
+        
+<script>
+// Set the date we're counting down to
+var list_s = [
+  "Deleting all exiting data in database...",
+  "Droped table in old database ...........",
+  "Rebuilt database .......................",
+  "Create all the table ...................", 
+  "Insert all the previous record..........",
+  "Set up is done now......................"
+];
+var i = 0;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+  	document.getElementById("demo").innerHTML = list_s[i] 
+  	i ++;
+  // If the count down is over, write some text 
+  if (i === 6) {
+    clearInterval(x);                        
+    document.getElementById("demo").innerHTML = "Restore database complete...............<br><a href='http://localhost:8080/GroupProject/_page/admin_console/index.html' class='btn btn-success text-center'>Return back to menu</a>";
+  }
+}, 1000);
+</script>
+
+</html>
